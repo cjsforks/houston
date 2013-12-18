@@ -33,8 +33,8 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
+        </div><!-- span-12 -->
+    </div><!-- houston create document -->
         <div class="row">
             <div class="span12">
                 <div class="page-header">
@@ -42,7 +42,7 @@
                   <h1>{{name}} ({{num_of_records}} record{{pluralize}})</h1>
                 </div>
             </div>
-        </div>
+        </div><!-- row -->
         <div class='row'>
             <div class="span10" style="overflow-x: auto">
                 <table class="table table-bordered table-striped table-hover">
@@ -66,7 +66,7 @@
                     {{/each}}
                   </tbody>
                 </table>
-          </div>
+            </div><!-- span 10 -->
           <div class="span2">
             <form>
                 <legend>Filter</legend>
@@ -75,8 +75,9 @@
                 <input name="{{this}}" class="houston-column-filter input-small" type="text" value="{{filter_value}}"/>
                 {{/each}}
             </form>
-          </div>
-      </div>
+        </div><!-- span 2 -->
+    </div><!-- row -->
+</div><!-- /.container-content -->
     {{/if}}
   </div>
 </template>
