@@ -14,10 +14,14 @@ Houston._setup_collection = (collection) ->
   name = collection._name
   methods = {}
   methods[Houston._houstonize "#{name}_insert"] = (doc) ->
+    check id, Match.Any
+    check update_dict, Match.Any
     return unless Houston._user_is_admin @userId
     collection.insert(doc)
 
   methods[Houston._houstonize "#{name}_update"] = (id, update_dict) ->
+    check id, Match.Any
+    check update_dict, Match.Any
     return unless Houston._user_is_admin @userId
     if collection.findOne(id)
       collection.update(id, update_dict)
@@ -26,6 +30,8 @@ Houston._setup_collection = (collection) ->
       collection.update(id, update_dict)
 
   methods[Houston._houstonize "#{name}_delete"] = (id, update_dict) ->
+    check id, Match.Any
+    check update_dict, Match.Any
     return unless Houston._user_is_admin @userId
     if collection.findOne(id)
       collection.remove(id)
